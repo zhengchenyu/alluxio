@@ -192,6 +192,14 @@ public class MetadataCachingBaseFileSystem extends BaseFileSystem {
     return statuses;
   }
 
+  @Override
+  public void setAttribute(AlluxioURI path, SetAttributePOptions options)
+      throws FileDoesNotExistException, IOException, AlluxioException {
+    mMetadataCache.invalidate(path.getParent());
+    mMetadataCache.invalidate(path);
+    super.setAttribute(path, options);
+  }
+
   /**
    * Asynchronously update file's last access time.
    *
