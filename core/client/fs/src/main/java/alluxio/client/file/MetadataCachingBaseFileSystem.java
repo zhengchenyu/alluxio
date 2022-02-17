@@ -25,6 +25,7 @@ import alluxio.grpc.DeletePOptions;
 import alluxio.grpc.GetStatusPOptions;
 import alluxio.grpc.ListStatusPOptions;
 import alluxio.grpc.RenamePOptions;
+import alluxio.grpc.SetAttributePOptions;
 import alluxio.metrics.MetricKey;
 import alluxio.metrics.MetricsSystem;
 import alluxio.util.FileSystemOptions;
